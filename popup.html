@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shorts Remover</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" alt="" width="28" height="28">
+    <h1>Shorts Remover</h1>
+  </header>
+
+  <label class="row">
+    <span class="text">
+      <span class="title">Hide Shorts</span>
+      <span class="hint">Shelves, feeds, sidebar and tabs</span>
+    </span>
+    <input type="checkbox" id="hideShorts" role="switch">
+    <span class="switch" aria-hidden="true"></span>
+  </label>
+
+  <label class="row">
+    <span class="text">
+      <span class="title">Open Shorts as normal videos</span>
+      <span class="hint">Plays them in the regular player</span>
+    </span>
+    <input type="checkbox" id="redirectShorts" role="switch">
+    <span class="switch" aria-hidden="true"></span>
+  </label>
+
+  <p class="footer">Changes apply to open YouTube tabs right away.</p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

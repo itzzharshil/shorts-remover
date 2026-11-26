@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Shorts Remover for YouTube",
+  "version": "1.0.0",
+  "description": "Hides YouTube Shorts everywhere on the site and opens Shorts links in the regular video player.",
+  "homepage_url": "https://github.com/itzzharshil/shorts-remover",
+  "minimum_chrome_version": "105",
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://m.youtube.com/*"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}

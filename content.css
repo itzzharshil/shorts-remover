@@ -1,0 +1,50 @@
+/*
+ * Shorts Remover — everything here is gated on html.ysr-on, which content.js
+ * toggles from the popup setting, so turning hiding off restores the page
+ * without a reload. Elements are hidden, never deleted, because YouTube
+ * recycles its DOM nodes and breaks if they disappear.
+ */
+
+/* ---------- Sidebar and mobile nav ---------- */
+html.ysr-on ytd-guide-entry-renderer:has(a[title="Shorts"]),
+html.ysr-on ytd-guide-entry-renderer:has(a[href^="/shorts"]),
+html.ysr-on ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+html.ysr-on ytd-mini-guide-entry-renderer:has(a[title="Shorts"]),
+html.ysr-on ytd-mini-guide-entry-renderer:has(a[href^="/shorts"]),
+html.ysr-on ytm-pivot-bar-item-renderer:has(.pivot-shorts),
+
+/* ---------- Shelves (home, search, subscriptions, watch page, channels) ---------- */
+html.ysr-on ytd-reel-shelf-renderer,
+html.ysr-on ytd-rich-shelf-renderer[is-shorts],
+html.ysr-on ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+html.ysr-on ytd-rich-section-renderer:has(ytd-reel-shelf-renderer),
+html.ysr-on ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model),
+html.ysr-on ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2),
+html.ysr-on grid-shelf-view-model:has(ytm-shorts-lockup-view-model),
+html.ysr-on grid-shelf-view-model:has(ytm-shorts-lockup-view-model-v2),
+html.ysr-on ytm-reel-shelf-renderer,
+html.ysr-on ytm-rich-section-renderer:has(ytm-reel-shelf-renderer),
+html.ysr-on ytm-rich-section-renderer:has(ytm-shorts-lockup-view-model),
+html.ysr-on ytm-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2),
+
+/* ---------- Individual Shorts mixed into regular feeds ---------- */
+html.ysr-on ytm-shorts-lockup-view-model,
+html.ysr-on ytm-shorts-lockup-view-model-v2,
+html.ysr-on ytd-reel-item-renderer,
+html.ysr-on ytd-rich-item-renderer:has(a[href^="/shorts/"]),
+html.ysr-on ytd-video-renderer:has(a#thumbnail[href^="/shorts/"]),
+html.ysr-on ytd-grid-video-renderer:has(a#thumbnail[href^="/shorts/"]),
+html.ysr-on ytd-compact-video-renderer:has(a#thumbnail[href^="/shorts/"]),
+html.ysr-on yt-lockup-view-model:has(a[href^="/shorts/"]),
+html.ysr-on ytd-notification-renderer:has(a[href^="/shorts/"]),
+html.ysr-on ytm-video-with-context-renderer:has(a[href^="/shorts/"]),
+html.ysr-on ytm-compact-video-renderer:has(a[href^="/shorts/"]),
+html.ysr-on ytm-rich-item-renderer:has(a[href^="/shorts/"]),
+
+/* ---------- Channel "Shorts" tab ---------- */
+html.ysr-on yt-tab-shape[tab-title="Shorts"],
+
+/* ---------- Anything content.js matched by its "Shorts" label ---------- */
+html.ysr-on [data-ysr-shorts] {
+  display: none !important;
+}
